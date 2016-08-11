@@ -4,8 +4,6 @@
 
 /*Bedazzled-specific stuff*/
 .bedazzled--head-main-root {
-  background-image: url(images/banner_1.png);
-  background-size: cover;
 }
 
 .bedazzled--head-main-root > .container {
@@ -37,8 +35,22 @@
   }
 }
 
+.bedazzled--background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /*Bootstrap stuff*/
 .navbar-nav > .active > a {
   border-bottom: 3px solid white;
   background-color: transparent;
+}
+
+body {
+  background-color: #EEE;
+  > .container {
+    background-color: #FFF;
+  }
 }

@@ -2,10 +2,6 @@
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
 /*Bedazzled-specific stuff*/
-.bedazzled--head-main-root {
-  background-image: url(/home/kevinc/Documents/JobStuff/Web/bedazzled_web_html/images/banner_1.png);
-  background-size: cover;
-}
 .bedazzled--head-main-root > .container {
   margin-top: 120px;
   margin-left: 110px;
@@ -33,8 +29,20 @@
   border-radius: 4px;
   color: #F0F;
 }
+.bedazzled--background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*Bootstrap stuff*/
 .navbar-nav > .active > a {
   border-bottom: 3px solid white;
   background-color: transparent;
+}
+body {
+  background-color: #EEE;
+}
+body > .container {
+  background-color: #FFF;
 }
