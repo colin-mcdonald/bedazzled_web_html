@@ -1,0 +1,35 @@
+/*Bedazzled website - CSS
+(c) 2016 Kevin Caccamo/Bitformations, inc.*/
+
+/*Bedazzled-specific stuff*/
+.bedazzled--head-main-root {
+  background-image: url(images/banner_1.png);
+  background-size: cover;
+}
+
+.bedazzled--head-main-root > .container {
+  margin-top: 120px;
+  margin-left: 110px;
+  margin-bottom: 170px;
+}
+
+.bedazzled--head-main-titles {
+  margin-bottom: 120px;
+}
+
+.bedazzled--head-main-titles > h1, .bedazzled--head-main-titles > h2 {
+  color: #FFF;
+  line-height: 0.4em;
+}
+
+.bedazzled--head-main-button > .btn {
+  border-width: 0;
+  border-radius: 4px;
+  color: #F0F;
+}
+
+/*Bootstrap stuff*/
+.navbar-nav > .active > a {
+  border-bottom: 3px solid white;
+  background-color: transparent;
+}
