@@ -17,13 +17,16 @@
 .bedazzled--head-main-titles > h1,
 .bedazzled--head-main-titles > h2 {
   color: #FFF;
-  line-height: 0.4em;
+  line-height: 0.7em;
 }
 .bedazzled--head-main-titles > h1 {
-  font-size: 30pt;
+  font-size: 60pt;
 }
 .bedazzled--head-main-titles > h2 {
-  font-size: 18pt;
+  font-size: 24pt;
+}
+.bedazzled--head-main-button {
+  margin-left: 10px;
 }
 .bedazzled--head-main-button > .btn {
   border-width: 0;
