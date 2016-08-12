@@ -11,5 +11,5 @@ cssfiles=(${lessfiles[@]/%[lL][eE][sS][sS]/css})
 
 for (( x=1; x <= ${#lessfiles}; ++x )); do
   print "Compiling ${lessfiles[x]} to ${cssfiles[x]}..."
-  lessc --autoprefix="ie >= 8,> 1% in CA" -sm=on -su=on -ru -rp=$(pwd) --insecure ${lessfiles[x]} ${cssfiles[x]}
+  lessc --autoprefix="ie >= 8,> 1% in CA" -sm=on -ru -rp=$(pwd) --insecure ${lessfiles[x]} ${cssfiles[x]}
 done
