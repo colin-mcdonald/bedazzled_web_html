@@ -1,6 +1,7 @@
 /* Bedazzled website - CSS
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
+/*Mixins*/
 /*Bedazzled-specific stuff*/
 .bedazzled--head-main-root > .container {
   margin-top: 120px;
@@ -29,14 +30,28 @@
   border-radius: 4px;
   color: #F0F;
 }
-.bedazzled--background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
+.bedazzled--carousel {
+  height: 600px;
+}
+.bedazzled--carousel > ol.carousel-indicators > li {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0;
+  margin: 12px / 2;
+  border-radius: 12px / 2;
+  width: 12px;
+  height: 12px;
+}
+.bedazzled--carousel > ol.carousel-indicators > li.active {
+  border: 0;
+  margin: 12px / 2;
+  border-radius: 12px / 2;
+  width: 12px;
+  height: 12px;
+  background-color: #FFF;
 }
 /*Bootstrap stuff*/
 .navbar-nav > .active > a {
+  padding-bottom: -3px;
   border-bottom: 3px solid white;
   background-color: transparent;
 }

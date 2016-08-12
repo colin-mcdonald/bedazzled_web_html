@@ -2,6 +2,22 @@
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
 
+@white: #FFF;
+@transparent-white: rgba(255, 255, 255, 0.5);
+@pink: #F0F;
+
+@carousel-slidebtn-size: 12px;
+@carousel-slidebtn-bordradi: @carousel-slidebtn-size / 2;
+
+/*Mixins*/
+.carousel-slidebtn() {
+  border: 0;
+  margin: @carousel-slidebtn-bordradi;
+  border-radius: @carousel-slidebtn-bordradi;
+  width: @carousel-slidebtn-size;
+  height: @carousel-slidebtn-size;
+}
+
 /*Bedazzled-specific stuff*/
 .bedazzled--head-main-root {
 }
@@ -35,15 +51,21 @@
   }
 }
 
-.bedazzled--background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
+.bedazzled--carousel {
+  height: 600px;
+  > ol.carousel-indicators > li {
+    background-color: @transparent-white;
+    .carousel-slidebtn;
+    &.active {
+      .carousel-slidebtn;
+      background-color: @white;
+    }
+  }
 }
 
 /*Bootstrap stuff*/
 .navbar-nav > .active > a {
+  padding-bottom: -3px;
   border-bottom: 3px solid white;
   background-color: transparent;
 }

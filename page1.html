@@ -14,9 +14,6 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <!-- Bedazzled theme -->
     <link rel="stylesheet" href="bedazzled.css">
 
@@ -24,7 +21,7 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,38 +45,59 @@
       </div>
     </nav>
 
-    <div id="bedazzled--carousel-head" class="carousel slide" data-ride="carousel">
+    <div id="bedazzled--carousel-head" class="bedazzled--carousel carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#bedazzled--carousel-head" data-slide-to="0" class="active"></li>
         <li data-target="#bedazzled--carousel-head" data-slide-to="1"></li>
         <li data-target="#bedazzled--carousel-head" data-slide-to="2"></li>
         <li data-target="#bedazzled--carousel-head" data-slide-to="3"></li>
-        <li data-target="#bedazzled--carousel-head" data-slide-to="4"></li>
       </ol>
-
-      <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/banner_1.png" alt="Banner 1" class="bedazzled--background" />
-          <div class="bedazzled--head-main-titles">
-            <h1>BEDAZZLED</h1>
-            <h2>DANCE CHAMPIONS 2016</h2>
+          <img class="first-slide" src="images/banner_1.png" alt="Banner image 1">
+          <div class="container">
+            <div class="carousel-caption bedazzled--head-main-titles">
+              <h1>BEDAZZLED</h1>
+              <h2>DANCE CHAMPIONS 2016</h2>
+            </div>
+            <div class="carousel-caption bedazzled--head-main-button">
+              <p><a class="btn btn-lg btn-default" href="#" role="button">VIEW UPCOMING EVENTS</a></p>
+            </div>
           </div>
-          <div class="bedazzled--head-main-button">
-            <a class="btn btn-default">VIEW UPCOMING EVENTS</a>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="images/banner_1.png" alt="Banner image 2">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
           </div>
         </div>
         <div class="item">
+          <img class="third-slide" src="images/banner_1.png" alt="Banner image 3">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
         </div>
         <div class="item">
-        </div>
-        <div class="item">
-        </div>
-        <div class="item">
+          <img class="fourth-slide" src="images/banner_1.png" alt="Banner image 4">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>The last one. I swear.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div><!-- /.carousel -->
 
     <div class="container">
       <!-- Example row of columns -->
@@ -108,14 +126,11 @@
       </footer>
     </div> <!-- /container -->
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </body>
 </html>
