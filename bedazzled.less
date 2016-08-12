@@ -2,6 +2,8 @@
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
 
+// ---------- Variables/constants ----------
+
 @white: #FFF;
 @transparent-white: rgba(255, 255, 255, 0.5);
 @pink: #F0F;
@@ -9,7 +11,10 @@
 @carousel-slidebtn-size: 12px;
 @carousel-slidebtn-bordradi: (@carousel-slidebtn-size / 2);
 
-/*Mixins*/
+@main-title-size: 60pt;
+@main-subtitle-size: 24pt;
+
+// ---------- Mixins ----------
 .carousel-slidebtn() {
   border: 0;
   margin: @carousel-slidebtn-bordradi;
@@ -18,7 +23,7 @@
   height: @carousel-slidebtn-size;
 }
 
-/*Bedazzled-specific stuff*/
+// ---------- Bedazzled-specific stuff ----------
 .bedazzled--head-main-root {
 }
 
@@ -31,14 +36,14 @@
 .bedazzled--head-main-titles {
   margin-bottom: 120px;
   > h1, > h2 {
-    color: #FFF;
+    color: @white;
     line-height: 0.7em;
   }
   > h1 {
-    font-size: 60pt;
+    font-size: @main-title-size;
   }
   > h2 {
-    font-size: 24pt;
+    font-size: @main-subtitle-size;
   }
 }
 
@@ -47,7 +52,7 @@
   > .btn {
     border-width: 0;
     border-radius: 4px;
-    color: #F0F;
+    color: @pink;
   }
 }
 
@@ -63,7 +68,7 @@
   }
 }
 
-/*Bootstrap stuff*/
+// ---------- Bootstrap stuff ----------
 .navbar-nav > .active > a {
   padding-bottom: -3px;
   border-bottom: 3px solid white;

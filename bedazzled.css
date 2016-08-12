@@ -1,8 +1,6 @@
 /* Bedazzled website - CSS
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
-/*Mixins*/
-/*Bedazzled-specific stuff*/
 .bedazzled--head-main-root > .container {
   margin-top: 120px;
   margin-left: 110px;
@@ -49,7 +47,6 @@
   height: 12px;
   background-color: #FFF;
 }
-/*Bootstrap stuff*/
 .navbar-nav > .active > a {
   padding-bottom: -3px;
   border-bottom: 3px solid white;
