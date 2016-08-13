@@ -49,6 +49,7 @@
 }
 .bedazzled--main-featurettes-featurette {
   position: relative;
+  display: block;
   height: 314.25px;
 }
 .bedazzled--main-featurettes-featurette img {
