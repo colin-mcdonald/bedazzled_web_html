@@ -70,7 +70,7 @@
 
 .bedazzled--main-featurettes-featurette {
   position: relative;
-  height: (image-height("images/whats_new.png") / 2);
+  height: (image-height("images/whats_new.png") * 0.75);
   img {
     position: absolute;
     top: 0;
@@ -85,10 +85,13 @@
     color: @white;
     position: absolute;
     bottom: 0;
+    margin: 0;
+    padding-top: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     text-align: center;
-    height: 25px;
+    height: 40px;
+    vertical-align: bottom;
   }
 }
 

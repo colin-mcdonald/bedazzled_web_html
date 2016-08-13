@@ -49,7 +49,7 @@
 }
 .bedazzled--main-featurettes-featurette {
   position: relative;
-  height: 209.5px;
+  height: 314.25px;
 }
 .bedazzled--main-featurettes-featurette img {
   position: absolute;
@@ -65,10 +65,13 @@
   color: #FFF;
   position: absolute;
   bottom: 0;
+  margin: 0;
+  padding-top: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   text-align: center;
-  height: 25px;
+  height: 40px;
+  vertical-align: bottom;
 }
 .navbar-nav > .active > a {
   padding-bottom: -3px;
