@@ -68,6 +68,30 @@
   }
 }
 
+.bedazzled--main-featurettes-featurette {
+  position: relative;
+  height: (image-height("images/whats_new.png") / 2);
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  h1 {
+    font-size: 12pt;
+    color: @white;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
+    height: 25px;
+  }
+}
+
 // ---------- Bootstrap stuff ----------
 .navbar-nav > .active > a {
   padding-bottom: -3px;
