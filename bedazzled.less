@@ -121,12 +121,22 @@ body>.container-fluid {
       font-size: (@main-subtitle-size / 2);
     }
   }
+  &-dots > .dot {
+    background-color: @transparent-white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px;
+    &.active {
+      background-color: @white;
+    }
+  }
 }
 
 
 // ---------- Bootstrap stuff ----------
 .navbar-nav > .active > a {
-  padding-bottom: -3px;
   border-bottom: 3px solid white;
   background-color: transparent;
 }

@@ -93,8 +93,18 @@ body > .container-fluid.bedazzled--main-foot {
 .bedazzled--main-foot-titles > h2 {
   font-size: 12pt;
 }
+.bedazzled--main-foot-dots > .dot {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 5px;
+}
+.bedazzled--main-foot-dots > .dot.active {
+  background-color: #FFF;
+}
 .navbar-nav > .active > a {
-  padding-bottom: -3px;
   border-bottom: 3px solid white;
   background-color: transparent;
 }
