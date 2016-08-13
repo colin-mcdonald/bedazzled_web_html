@@ -74,6 +74,25 @@
   height: 40px;
   vertical-align: bottom;
 }
+body > .container-fluid.bedazzled--main-foot {
+  background-color: #000;
+  color: #FFF;
+}
+.bedazzled--main-foot-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.bedazzled--main-foot-titles > h1,
+.bedazzled--main-foot-titles > h2 {
+  color: #FFF;
+  line-height: 0.35em;
+}
+.bedazzled--main-foot-titles > h1 {
+  font-size: 30pt;
+}
+.bedazzled--main-foot-titles > h2 {
+  font-size: 12pt;
+}
 .navbar-nav > .active > a {
   padding-bottom: -3px;
   border-bottom: 3px solid white;
