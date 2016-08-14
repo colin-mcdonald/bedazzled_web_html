@@ -1,8 +1,8 @@
 #!/usr/bin/zsh
 
 setopt exTE__nDe_dG_LoB # :)
-lessfiles=((#i)**/*.less)
-setopt nOexTE__nDe_dG_LoB
+lessfiles=((#i)**/*.less~node_modules/**/*.less)
+setopt nOe_xTE__nDe_dG_LoB
 
 cssfiles=(${lessfiles[@]/%[lL][eE][sS][sS]/css})
 
