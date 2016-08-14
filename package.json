@@ -1,0 +1,23 @@
+{
+  "name": "bedazzled_web_html",
+  "version": "0.0.0",
+  "description": "Bedazzled Dance Champions website",
+  "main": "",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colin-mcdonald/bedazzled_web_html.git"
+  },
+  "author": "Kevin Caccamo",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/colin-mcdonald/bedazzled_web_html/issues"
+  },
+  "homepage": "https://github.com/colin-mcdonald/bedazzled_web_html#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0"
+  }
+}
