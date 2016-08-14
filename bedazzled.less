@@ -8,6 +8,7 @@
 @transparent-white: rgba(255, 255, 255, 0.5);
 @pink: #F0F;
 @black: #000;
+@transparent-black: rgba(0, 0, 0, 0.7);
 
 @carousel-slidebtn-size: 12px;
 @carousel-slidebtn-bordradi: (@carousel-slidebtn-size / 2);
@@ -75,12 +76,11 @@
       width: @mid-width;
     }
   }
-  &main-featurettes-featurette {
+  &featurette {
     position: relative;
     display: block;
-    height: ((@mid-width / 3 - 30px) * (image-height("images/whats_new.png") / image-width("images/whats_new.png")));
     img {
-      position: absolute;
+      position: relative;
       top: 0;
       right: 0;
       left: 0;
@@ -95,7 +95,7 @@
       bottom: 0;
       margin: 0;
       padding-top: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: @transparent-black;
       width: 100%;
       text-align: center;
       height: 40px;
