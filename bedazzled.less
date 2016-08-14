@@ -17,7 +17,7 @@
 @main-subtitle-size: 24pt;
 
 @top-border-radius: 8px;
-@mid-width: 900px;
+@mid-width: 1000px;
 
 @bs-lg: 1200px;
 @bs-md: 992px;
@@ -108,7 +108,7 @@
   }
   &main-foot {
     &-row {
-      margin-top: 50px;
+      margin-top: 100px;
       margin-bottom: 50px;
     }
     &-titles {
@@ -124,7 +124,7 @@
       }
     }
     &-dots {
-      margin-left: 100px;
+      margin-left: 120px;
       > .dot {
         background-color: @transparent-white;
         width: 40px;
@@ -146,7 +146,7 @@
     .first-row {
       > .col-md-4, .col-md-8 {
         @media (min-width: @bs-lg) {
-          height: 310px;
+          height: (@mid-width / 3 + 10);
         }
       }
       margin-top: 20px;
@@ -155,9 +155,6 @@
     .second-row {
       margin-top: 20px;
       margin-bottom: 20px;
-      > .col-md-4 {
-        height: 100%;
-      }
     }
   }
 }
