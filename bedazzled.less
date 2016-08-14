@@ -15,6 +15,8 @@
 @main-title-size: 60pt;
 @main-subtitle-size: 24pt;
 
+@top-border-radius: 8px;
+
 // ---------- Mixins ----------
 .carousel-slidebtn() {
   border: 0;
@@ -26,6 +28,11 @@
 
 // ---------- Bedazzled-specific stuff ----------
 .bedazzled-- {
+  &main-top {
+    border-top-left-radius: @top-border-radius;
+    border-top-right-radius: @top-border-radius;
+    margin-top: -100px;
+  }
   &head-main-root > .container {
     margin-top: 120px;
     margin-left: 110px;
@@ -117,6 +124,11 @@
       &.active {
         background-color: @white;
       }
+    }
+  }
+  &container {
+    @media (min-width: 1200px) {
+      width: 900px;
     }
   }
 }

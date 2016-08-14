@@ -1,6 +1,11 @@
 /* Bedazzled website - CSS
  * (c) 2016 Bedazzled Dance Champions, Inc.
  */
+.bedazzled--main-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: -100px;
+}
 .bedazzled--head-main-root > .container {
   margin-top: 120px;
   margin-left: 110px;
@@ -99,6 +104,11 @@
 }
 .bedazzled--main-foot-dots > .dot.active {
   background-color: #FFF;
+}
+@media (min-width: 1200px) {
+  .bedazzled--container {
+    width: 900px;
+  }
 }
 body > .container-fluid.bedazzled--main-foot {
   background-color: #000;
