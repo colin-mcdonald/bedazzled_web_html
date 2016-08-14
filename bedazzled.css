@@ -74,10 +74,6 @@
   height: 40px;
   vertical-align: bottom;
 }
-body > .container-fluid.bedazzled--main-foot {
-  background-color: #000;
-  color: #FFF;
-}
 .bedazzled--main-foot-row {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -103,6 +99,10 @@ body > .container-fluid.bedazzled--main-foot {
 }
 .bedazzled--main-foot-dots > .dot.active {
   background-color: #FFF;
+}
+body > .container-fluid.bedazzled--main-foot {
+  background-color: #000;
+  color: #FFF;
 }
 .navbar-nav > .active > a {
   border-bottom: 3px solid white;

@@ -25,75 +25,99 @@
 }
 
 // ---------- Bedazzled-specific stuff ----------
-.bedazzled--head-main-root {
-}
-
-.bedazzled--head-main-root > .container {
-  margin-top: 120px;
-  margin-left: 110px;
-  margin-bottom: 170px;
-}
-
-.bedazzled--head-main-titles {
-  margin-bottom: 120px;
-  > h1, > h2 {
-    color: @white;
-    line-height: 0.7em;
+.bedazzled-- {
+  &head-main-root > .container {
+    margin-top: 120px;
+    margin-left: 110px;
+    margin-bottom: 170px;
   }
-  > h1 {
-    font-size: @main-title-size;
-  }
-  > h2 {
-    font-size: @main-subtitle-size;
-  }
-}
-
-.bedazzled--head-main-button {
-  margin-left: 10px;
-  > .btn {
-    border-width: 0;
-    border-radius: 4px;
-    color: @pink;
-  }
-}
-
-.bedazzled--carousel {
-  height: 600px;
-  > ol.carousel-indicators > li {
-    background-color: @transparent-white;
-    .carousel-slidebtn;
-    &.active {
-      .carousel-slidebtn;
-      background-color: @white;
+  &head-main-titles {
+    margin-bottom: 120px;
+    > h1, > h2 {
+      color: @white;
+      line-height: 0.7em;
+    }
+    > h1 {
+      font-size: @main-title-size;
+    }
+    > h2 {
+      font-size: @main-subtitle-size;
     }
   }
-}
-
-.bedazzled--main-featurettes-featurette {
-  position: relative;
-  display: block;
-  height: (image-height("images/whats_new.png") * 0.75);
-  img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+  &head-main-button {
+    margin-left: 10px;
+    > .btn {
+      border-width: 0;
+      border-radius: 4px;
+      color: @pink;
+    }
   }
-  h1 {
-    font-size: 12pt;
-    color: @white;
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    padding-top: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    text-align: center;
-    height: 40px;
-    vertical-align: bottom;
+  &carousel {
+    height: 600px;
+    > ol.carousel-indicators > li {
+      background-color: @transparent-white;
+      .carousel-slidebtn;
+      &.active {
+        .carousel-slidebtn;
+        background-color: @white;
+      }
+    }
+  }
+  &main-featurettes-featurette {
+    position: relative;
+    display: block;
+    height: (image-height("images/whats_new.png") * 0.75);
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+    h1 {
+      font-size: 12pt;
+      color: @white;
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      padding-top: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      text-align: center;
+      height: 40px;
+      vertical-align: bottom;
+    }
+  }
+  &main-foot {
+    &-row {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    &-titles {
+      > h1, > h2 {
+        color: @white;
+        line-height: 0.35em;
+      }
+      > h1 {
+        font-size: (@main-title-size / 2);
+      }
+      > h2 {
+        font-size: (@main-subtitle-size / 2);
+      }
+    }
+    &-dots > .dot {
+      background-color: @transparent-white;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 5px;
+      &.active {
+        background-color: @white;
+      }
+    }
   }
 }
 
@@ -103,37 +127,6 @@ body>.container-fluid {
     color: @white;
   }
 }
-
-.bedazzled--main-foot {
-  &-row {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  &-titles {
-    > h1, > h2 {
-      color: @white;
-      line-height: 0.35em;
-    }
-    > h1 {
-      font-size: (@main-title-size / 2);
-    }
-    > h2 {
-      font-size: (@main-subtitle-size / 2);
-    }
-  }
-  &-dots > .dot {
-    background-color: @transparent-white;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    display: inline-block;
-    margin: 5px;
-    &.active {
-      background-color: @white;
-    }
-  }
-}
-
 
 // ---------- Bootstrap stuff ----------
 .navbar-nav > .active > a {
