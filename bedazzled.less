@@ -16,6 +16,11 @@
 @main-subtitle-size: 24pt;
 
 @top-border-radius: 8px;
+@mid-width: 900px;
+
+@bs-lg: 1200px;
+@bs-md: 992px;
+@bs-sm: 768px;
 
 // ---------- Mixins ----------
 .carousel-slidebtn() {
@@ -33,10 +38,16 @@
     border-top-right-radius: @top-border-radius;
     margin-top: -100px;
   }
-  &head-main-root > .container {
-    margin-top: 120px;
-    margin-left: 110px;
-    margin-bottom: 170px;
+  &carousel {
+    height: 600px;
+    > ol.carousel-indicators > li {
+      background-color: @transparent-white;
+      .carousel-slidebtn;
+      &.active {
+        .carousel-slidebtn;
+        background-color: @white;
+      }
+    }
   }
   &head-main-titles {
     margin-bottom: 120px;
@@ -59,21 +70,15 @@
       color: @pink;
     }
   }
-  &carousel {
-    height: 600px;
-    > ol.carousel-indicators > li {
-      background-color: @transparent-white;
-      .carousel-slidebtn;
-      &.active {
-        .carousel-slidebtn;
-        background-color: @white;
-      }
+  &container {
+    @media (min-width: @bs-lg) {
+      width: @mid-width;
     }
   }
   &main-featurettes-featurette {
     position: relative;
     display: block;
-    height: (image-height("images/whats_new.png") * 0.75);
+    height: (@mid-width / 3 * 0.8 * (image-height("images/whats_new.png") / image-width("images/whats_new.png")));
     img {
       position: absolute;
       top: 0;
@@ -124,11 +129,6 @@
       &.active {
         background-color: @white;
       }
-    }
-  }
-  &container {
-    @media (min-width: 1200px) {
-      width: 900px;
     }
   }
 }
