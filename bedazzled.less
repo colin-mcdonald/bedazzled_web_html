@@ -37,7 +37,11 @@
   &main-top {
     border-top-left-radius: @top-border-radius;
     border-top-right-radius: @top-border-radius;
-    margin-top: -100px;
+    margin-top: -120px;
+    position: relative;
+    > .row {
+      margin-top: 20px;
+    }
   }
   &carousel {
     height: 600px;
@@ -135,6 +139,10 @@
     }
   }
   &main-bottom {
+    border-bottom-left-radius: @top-border-radius;
+    border-bottom-right-radius: @top-border-radius;
+    margin-bottom: -20px;
+    position: relative;
     .first-row {
       > .col-md-4, .col-md-8 {
         @media (min-width: @bs-lg) {
