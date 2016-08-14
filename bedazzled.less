@@ -79,9 +79,6 @@
   &featurette {
     position: relative;
     display: block;
-    img {
-      width: 100%;
-    }
     h1 {
       font-size: 12pt;
       color: @white;
@@ -103,6 +100,7 @@
     font-size: 20pt;
     height: 100%;
     width: 100%;
+    text-align: center;
   }
   &main-foot {
     &-row {
@@ -136,6 +134,24 @@
       }
     }
   }
+  &main-bottom {
+    .first-row {
+      > .col-md-4, .col-md-8 {
+        @media (min-width: @bs-lg) {
+          height: 310px;
+        }
+      }
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .second-row {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      > .col-md-4 {
+        height: 100%;
+      }
+    }
+  }
 }
 
 body>.container-fluid {
@@ -156,4 +172,8 @@ body {
   > .container {
     background-color: #FFF;
   }
+}
+
+.img-v-responsive { // Vertically-responsive image.
+  height: 100%;
 }
