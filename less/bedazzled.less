@@ -44,7 +44,6 @@
     }
   }
   &carousel {
-    height: 600px;
     > ol.carousel-indicators > li {
       background-color: @transparent-white;
       .carousel-slidebtn;
@@ -144,11 +143,6 @@
     margin-bottom: -20px;
     position: relative;
     .first-row {
-      > .col-md-4, .col-md-8 {
-        @media (min-width: @bs-lg) {
-          height: (@mid-width / 3 + 10);
-        }
-      }
       margin-top: 20px;
       margin-bottom: 20px;
     }
@@ -161,10 +155,49 @@
     background-color: @white;
   }
   &shows {
-    .carousel-control {
+    > .multicarousel-control {
       background-color: @white;
       background-image: data-uri('image/gif;base64', '../images/1x1sq.gif');
       opacity: 1.0;
+      color: #BBB;
+      &:hover {
+        color: (#BBB / 2);
+        text-decoration: none;
+      }
+      &.left {
+        float: left;
+      }
+      &.right {
+        float: right;
+      }
+      > span[aria-hidden] {
+        font-weight: bold;
+        font-size: 60pt;
+      }
+    }
+    > .multicarousel-inner {
+      @media (min-width: @bs-lg) {
+        width: @mid-width;
+        margin: 10px auto;
+        > .item {
+          width: (@mid-width / 4);
+          float: left;
+          > h1 {
+            font-size: 20pt;
+            font-weight: bold;
+          }
+          > h2 {
+            font-size: 14pt;
+            font-weight: bold;
+          }
+          > h3 {
+            font-size: 14pt;
+          }
+        }
+      }
+      &::after {
+        float: none;
+      }
     }
   }
 }
@@ -177,6 +210,10 @@ body>.container-fluid {
 }
 
 // ---------- Bootstrap stuff ----------
+.navbar {
+  border: 0;
+}
+
 .navbar-nav > .active > a {
   border-bottom: 3px solid white;
   background-color: transparent;
