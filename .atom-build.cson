@@ -1,4 +1,0 @@
-cmd: "./build.sh"
-name: "Bedazzled website"
-sh: false
-cwd: "{PROJECT_PATH}"
