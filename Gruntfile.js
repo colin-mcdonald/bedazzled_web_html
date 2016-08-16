@@ -33,11 +33,44 @@ module.exports = function (grunt) {
                     'css/bedazzled.css': ['less/bedazzled.less']
                 }
             }
-
+        },
+        coffee: {
+            development: {
+                options: {
+                    separator: '\n\n// ----------------------------------------------------------------------\n\n',
+                    bare: false,
+                    join: true
+                },
+                src: 'coffee/multicarousel.coffee',
+                dest: 'jsd/multicarousel.js'
+            },
+            production: {
+                options: {
+                    join: true
+                },
+                src: 'coffee/multicarousel.coffee',
+                dest: 'js/multicarousel.js'
+            }
+        },
+        uglify: {
+            production: {
+                options: {
+                    compress: true,
+                    mangle: {
+                        except: ['$']
+                    },
+                    preserveComments: false,
+                    banner: '/* Copyright (C) 2016 Bedazzled Dance Champions, Inc. */',
+                    'screwIE8': false
+                },
+                src: 'js/multicarousel.js',
+                dest: 'js/multicarousel.js'
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.registerTask('default', ['less']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.registerTask('default', ['less', 'coffee', 'uglify']);
 };
