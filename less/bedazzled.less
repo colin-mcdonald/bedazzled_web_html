@@ -23,6 +23,8 @@
 @bs-md: 992px;
 @bs-sm: 768px;
 
+@shows-carousel-height: 250px;
+
 // ---------- Mixins ----------
 .carousel-slidebtn() {
   border: 0;
@@ -154,25 +156,36 @@
   &main-shows {
     background-color: @white;
   }
+
+  // Multi-item carousel
   &shows {
+    position: relative;
     > .multicarousel-control {
       background-color: @white;
       background-image: data-uri('image/gif;base64', '../images/1x1sq.gif');
       opacity: 1.0;
       color: #BBB;
+      display: block;
+      position: absolute;
+      height: auto;
+      top: 0;
+      bottom: 0;
+      width: 85px;
+      height: @shows-carousel-height;
       &:hover {
         color: (#BBB / 2);
         text-decoration: none;
       }
       &.left {
-        float: left;
+        left: 0;
       }
       &.right {
-        float: right;
+        right: 0;
       }
       > span[aria-hidden] {
         font-weight: bold;
         font-size: 60pt;
+        line-height: @shows-carousel-height;
       }
     }
     > .multicarousel-inner {
@@ -180,7 +193,8 @@
         width: @mid-width;
         margin: 10px auto;
         > .item {
-          width: (@mid-width / 4);
+          width: 25%;
+          height: @shows-carousel-height;
           float: left;
           > h1 {
             font-size: 20pt;
@@ -193,10 +207,10 @@
           > h3 {
             font-size: 14pt;
           }
+          &.hidden {
+            display: none;
+          }
         }
-      }
-      &::after {
-        float: none;
       }
     }
   }
