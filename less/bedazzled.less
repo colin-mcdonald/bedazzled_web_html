@@ -111,6 +111,11 @@
     &-row {
       margin-top: 100px;
       margin-bottom: 50px;
+      @media (max-width: @bs-sm) {
+        > .col-md-4 {
+          margin: 10px auto;
+        }
+      }
     }
     &-titles {
       > h1, > h2 {
@@ -125,7 +130,9 @@
       }
     }
     &-dots {
-      margin-left: 120px;
+      @media (min-width: @bs-lg) {
+        margin-left: 120px;
+      }
       > .dot {
         background-color: @transparent-white;
         width: 40px;
