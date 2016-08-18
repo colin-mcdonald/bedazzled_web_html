@@ -170,63 +170,72 @@
   &main-shows {
     background-color: @white;
   }
+}
 
-  // Multi-item carousel
-  &shows {
-    position: relative;
-    > .multicarousel-control {
-      background-color: @white;
-      background-image: data-uri('image/gif;base64', '../images/1x1sq.gif');
-      opacity: 1.0;
-      color: #BBB;
-      display: block;
-      position: absolute;
-      height: auto;
-      top: 0;
-      bottom: 0;
-      width: 85px;
-      height: @shows-carousel-height;
-      &:hover {
-        color: (#BBB / 2);
-        text-decoration: none;
-      }
-      &.left {
-        left: 0;
-        text-align: right;
-      }
-      &.right {
-        right: 0;
-      }
-      > span[aria-hidden] {
-        font-weight: bold;
-        font-size: 60pt;
-        line-height: @shows-carousel-height;
-      }
+// Multi-item carousel
+.multicarousel {
+  position: relative;
+  @media (min-width: @bs-md) {
+    height: @shows-carousel-height;
+  }
+  & > &-control {
+    background-color: @white;
+    background-image: data-uri('image/gif;base64', '../images/1x1sq.gif');
+    opacity: 1.0;
+    color: #BBB;
+    display: block;
+    position: absolute;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    width: 85px;
+    height: @shows-carousel-height;
+    &:hover {
+      color: (#BBB / 2);
+      text-decoration: none;
     }
-    > .multicarousel-inner {
-      @media (min-width: @bs-lg) {
-        width: @mid-width;
-        margin: 10px auto;
-        > .item {
-          width: 25%;
-          height: @shows-carousel-height;
-          float: left;
-          > h1 {
-            font-size: 20pt;
-            font-weight: bold;
-          }
-          > h2 {
-            font-size: 14pt;
-            font-weight: bold;
-          }
-          > h3 {
-            font-size: 14pt;
-          }
-          &.hidden {
-            display: none;
-          }
+    &.left {
+      left: 0;
+      text-align: right;
+    }
+    &.right {
+      right: 0;
+    }
+    > span[aria-hidden] {
+      font-weight: bold;
+      font-size: 60pt;
+      line-height: @shows-carousel-height;
+    }
+  }
+  & > &-inner {
+    @media (min-width: @bs-md) {
+      width: @mid-width;
+      margin: 10px auto;
+      position: relative;
+      overflow: hidden;
+      > .item {
+        width: 25%;
+        height: @shows-carousel-height;
+        position: absolute;
+        top: 0;
+        > h1 {
+          font-size: 20pt;
+          font-weight: bold;
         }
-      }
+        > h2 {
+          font-size: 14pt;
+          font-weight: bold;
+        }
+        > h3 {
+          font-size: 14pt;
+        }
+        &.hidden {
+          display: none;
+        }
+      } // /.item
+    }
+    @media (max-width: (@bs-md - 1)) {
+      overflow: scroll;
     }
   }
 }
