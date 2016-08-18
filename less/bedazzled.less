@@ -170,6 +170,21 @@
   &main-shows {
     background-color: @white;
   }
+  &shows {
+    .item {
+      > h1 {
+        font-size: 20pt;
+        font-weight: bold;
+      }
+      > h2 {
+        font-size: 14pt;
+        font-weight: bold;
+      }
+      > h3 {
+        font-size: 14pt;
+      }
+    }
+  }
 }
 
 // Multi-item carousel
@@ -220,17 +235,6 @@
         position: absolute;
         transition: left 1s ease-in-out 0s;
         top: 0;
-        > h1 {
-          font-size: 20pt;
-          font-weight: bold;
-        }
-        > h2 {
-          font-size: 14pt;
-          font-weight: bold;
-        }
-        > h3 {
-          font-size: 14pt;
-        }
         &.hidden {
           display: none;
         }
