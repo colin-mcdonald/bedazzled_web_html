@@ -7,7 +7,7 @@ reinit_pos = (e) ->
     mc_first = mc_visible.filter(".active")
 
     mc_first.css("left", "#{0}px")
-    mc_firstidx = mc_visible.index(mc_active.get(0))
+    mc_firstidx = mc_visible.index(mc_first.get(0))
 
     mc_lastidx = if mc_firstidx is 0 then -1 else mc_firstidx - 1
     mc_last = mc_visible.eq(mc_lastidx)
