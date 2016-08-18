@@ -1,20 +1,24 @@
 reinit_pos = (e) ->
   $(".multicarousel").each (idx, el) ->
-    multicarousel = $(el)
-    multicarousel_inner = multicarousel.children(".multicarousel-inner").first()
-    multicarousel_items = multicarousel_inner.children(".item")
-    multicarousel_visible = multicarousel_items.not(".hidden")
-    multicarousel_active = multicarousel_visible.filter(".active")
+    mc = $(el)
+    mc_inner = mc.children(".multicarousel-inner").first()
+    mc_items = mc_inner.children(".item")
+    mc_visible = mc_items.not(".hidden")
+    mc_first = mc_visible.filter(".active")
 
-    multicarousel_visible.each (idx, el) ->
-      mitem = $(el)
-      mitem.css("left", 250 * idx)
+    mc_first.css("left", "#{0}px")
+    mc_firstidx = mc_visible.index(mc_active.get(0))
 
-    console.log multicarousel
-    console.log multicarousel_inner
-    console.log multicarousel_items
-    console.log multicarousel_visible
-    console.log multicarousel_active
+    mc_lastidx = if mc_firstidx is 0 then -1 else mc_firstidx - 1
+    mc_last = mc_visible.eq(mc_lastidx)
+
+    console.log "mc:", mc
+    console.log "mc_inner:", mc_inner
+    console.log "mc_items:", mc_items
+    console.log "mc_visible:", mc_visible
+    console.log "mc_first:", mc_first
+    console.log "mc_firstidx:", mc_firstidx
+    console.log "mc_lastidx:", mc_lastidx
 
 window.addEventListener "resize", reinit_pos
 reinit_pos()
