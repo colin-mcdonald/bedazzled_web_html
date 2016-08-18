@@ -35,21 +35,16 @@ module.exports = function (grunt) {
             }
         },
         coffee: {
-            development: {
+            compiledjs: {
                 options: {
                     separator: '\n\n// ----------------------------------------------------------------------\n\n',
                     bare: false,
                     join: true
                 },
-                src: 'coffee/multicarousel.coffee',
-                dest: 'jsd/multicarousel.js'
-            },
-            production: {
-                options: {
-                    join: true
-                },
-                src: 'coffee/multicarousel.coffee',
-                dest: 'js/multicarousel.js'
+                files: {
+                    'jsd/multicarousel.js': 'coffee/multicarousel.coffee',
+                    'jsd/bedazzled.js': 'coffee/bedazzled.coffee'
+                }
             }
         },
         uglify: {
@@ -63,8 +58,9 @@ module.exports = function (grunt) {
                     banner: '/* Copyright (C) 2016 Bedazzled Dance Champions, Inc. */',
                     'screwIE8': false
                 },
-                src: 'js/multicarousel.js',
-                dest: 'js/multicarousel.js'
+                files: {
+                    'js/bedazzled.js': ['jsd/multicarousel.js', 'jsd/bedazzled.js']
+                }
             }
         }
     });

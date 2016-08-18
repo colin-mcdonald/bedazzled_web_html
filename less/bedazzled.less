@@ -183,6 +183,10 @@
       > h3 {
         font-size: 14pt;
       }
+      @media (max-width: @bs-sm) {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
     }
   }
 }
@@ -190,7 +194,10 @@
 #bedazzled--main-shows-xs {
   > a[data-toggle=collapse] {
     color: @black;
-    &:hover, &:visited {
+    font-size: 250%;
+    text-align: center;
+    display: block;
+    &:hover, &:visited, &:active, &:focus {
       color: @black;
       text-decoration: none;
     }
