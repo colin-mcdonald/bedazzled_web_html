@@ -76,11 +76,6 @@
       color: @pink;
     }
   }
-  &container {
-    @media (min-width: @bs-lg) {
-      width: @mid-width;
-    }
-  }
   &featurette {
     position: relative;
     display: block;
@@ -103,7 +98,9 @@
     background-color: @black;
     color: @white;
     font-size: 20pt;
-    height: 100%;
+    @media (min-width: @bs-lg) {
+      height: (image-width("../images/rules_regulations.png") / image-height("../images/rules_regulations.png"));
+    }
     width: 100%;
     text-align: center;
   }
@@ -293,6 +290,8 @@ body {
   }
 }
 
-.img-v-responsive { // Vertically-responsive image.
-  height: 100%;
+.img-responsive { // Vertically-responsive image.
+  @media (max-width: @bs-sm) {
+    width: 100%;
+  }
 }
