@@ -20,8 +20,11 @@
 @mid-width: 1000px;
 
 @bs-lg: 1200px;
+@bs-container-lg: 1170px;
 @bs-md: 992px;
+@bs-container-md: 970px;
 @bs-sm: 768px;
+@bs-container-sm: 750px;
 
 @shows-carousel-height: 250px;
 
@@ -99,7 +102,13 @@
     color: @white;
     font-size: 20pt;
     @media (min-width: @bs-lg) {
-      height: (image-width("../images/rules_regulations.png") / image-height("../images/rules_regulations.png"));
+      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-lg / 3 - 30 );
+    }
+    @media (min-width: @bs-md) and (max-width: (@bs-lg - 1)) {
+      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-md / 3 - 30 );
+    }
+    @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) {
+      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-sm / 3 - 30 );
     }
     width: 100%;
     text-align: center;
@@ -239,8 +248,17 @@
     }
   }
   & > &-inner {
-    @media (min-width: @bs-md) {
-      width: @mid-width;
+    // This will not be visible on mobile phones.
+    @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) {
+      width: @bs-container-sm;
+    }
+    @media (min-width: @bs-md) and (max-width: (@bs-lg - 1)) {
+      width: @bs-container-md;
+    }
+    @media (min-width: @bs-lg) {
+      width: @bs-container-lg;
+    }
+    @media (min-width: @bs-sm) {
       height: @shows-carousel-height;
       margin: 10px auto;
       position: relative;
