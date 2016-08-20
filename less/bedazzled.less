@@ -100,18 +100,35 @@
     display: block;
     background-color: @black;
     color: @white;
-    font-size: 20pt;
+    font-size: 32pt;
     @media (min-width: @bs-lg) {
-      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-lg / 3 - 30 );
+      @eiwheight: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-lg / 3 - 30 );
+      height: @eiwheight;
+      padding-top: (@eiwheight / 2 - 32pt / 2);
     }
     @media (min-width: @bs-md) and (max-width: (@bs-lg - 1)) {
-      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-md / 3 - 30 );
+      @eiwheight: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-md / 3 - 30 );
+      height: @eiwheight;
+      padding-top: (@eiwheight / 2 - 32pt / 2);
     }
     @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) {
-      height: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-sm / 3 - 30 );
+      @eiwheight: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-sm / 3 - 30 );
+      height: @eiwheight;
+      padding-top: (@eiwheight / 2 - 32pt / 2);
     }
     width: 100%;
     text-align: center;
+    &:hover, &:active, &:focus {
+      color: @white;
+      text-decoration: none;
+    }
+    &::after {
+      display: block;
+      background-color: @white;
+      height: 3px;
+      width: 100px;
+      margin-top: 10px;
+    }
   }
   &main-foot {
     &-row {
