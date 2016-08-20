@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                     sourceMap: true,
                     sourceMapFileInline: true,
                     ieCompat: false,
-                    plugins: new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8,> 1% in CA"]}),
+                    plugins: [new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8","> 1% in CA"]})],
                     compress: false
                 },
                 files: {
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                     sourceMap: false,
                     sourceMapFileInline: false,
                     ieCompat: true,
-                    plugins: new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8,> 1% in CA"]}),
+                    plugins: [new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8","> 1% in CA"]})],
                     compress: true
                 },
                 files: {
