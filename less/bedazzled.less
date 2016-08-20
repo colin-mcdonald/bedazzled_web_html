@@ -138,16 +138,6 @@
       color: @white;
       text-decoration: none;
     }
-    &:hover {
-      &::after {
-        content: "";
-        display: block;
-        background-color: @white;
-        height: 6px;
-        width: 200px;
-        margin: 12px auto;
-      }
-    }
     &::after {
       content: "";
       display: block;
@@ -156,6 +146,9 @@
       width: 120px;
       margin: 12px auto;
       transition: width 0.2s ease-in-out 0s;
+    }
+    &:hover::after {
+      width: 200px;
     }
   }
   &main-foot {
