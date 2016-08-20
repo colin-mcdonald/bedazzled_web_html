@@ -42,8 +42,16 @@
   &main-top {
     border-top-left-radius: @top-border-radius;
     border-top-right-radius: @top-border-radius;
-    margin-top: -120px;
     position: relative;
+    @media (max-width: (@bs-sm - 1)) { // Phone
+      margin-top: -20px;
+    }
+    @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) { // Tablet
+      margin-top: -80px;
+    }
+    @media (min-width: @bs-md) { // Desktop+
+      margin-top: -120px;
+    }
     > .row {
       margin-top: 20px;
     }
@@ -129,6 +137,7 @@
       @eiwheight: ( (image-height("../images/rules_regulations.png") / image-width("../images/rules_regulations.png")) * @bs-container-sm / 3 - 30 );
       height: @eiwheight;
       padding-top: (@eiwheight / 2 - 32pt);
+      font-size: 24pt;
     }
     @media (max-width: (@bs-sm - 1)) {
       height: 280px;
@@ -143,12 +152,19 @@
       display: block;
       background-color: @white;
       height: 6px;
-      width: 120px;
       margin: 12px auto;
       transition: width 0.2s ease-in-out 0s;
+      width: 120px;
+      @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) { // Tablet
+        width: 70px;
+        height: 4px;
+      }
     }
     &:hover::after {
       width: 200px;
+      @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) { // Tablet
+        width: 120px;
+      }
     }
   }
   &main-foot {
