@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+    var copyrightBanner = '/* Copyright (C) 2016 Bedazzled Dance Champions, Inc. */';
+
     grunt.initConfig({
         less: {
             development: {
@@ -11,7 +13,8 @@ module.exports = function (grunt) {
                     sourceMapFileInline: true,
                     ieCompat: false,
                     plugins: [new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8","> 1% in CA"]})],
-                    compress: false
+                    compress: false,
+                    banner: copyrightBanner
                 },
                 files: {
                     'cssd/bedazzled.css': ['less/bedazzled.less']
@@ -27,7 +30,8 @@ module.exports = function (grunt) {
                     sourceMapFileInline: false,
                     ieCompat: true,
                     plugins: [new (require('less-plugin-autoprefix'))({browsers: ["ie >= 8","> 1% in CA"]})],
-                    compress: true
+                    compress: true,
+                    banner: copyrightBanner
                 },
                 files: {
                     'css/bedazzled.css': ['less/bedazzled.less']
@@ -55,7 +59,7 @@ module.exports = function (grunt) {
                         except: ['$']
                     },
                     preserveComments: false,
-                    banner: '/* Copyright (C) 2016 Bedazzled Dance Champions, Inc. */',
+                    banner: copyrightBanner,
                     'screwIE8': false
                 },
                 files: {
