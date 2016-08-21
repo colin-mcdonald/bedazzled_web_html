@@ -46,3 +46,8 @@ node_modules
 
 # Grunt
 !Gruntfile.js
+
+# Bootstrap and jQuery - in case I don't have an internet connection
+!**/bootstrap*.css
+!**/bootstrap*.js
+!**/jquery*.js
