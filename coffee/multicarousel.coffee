@@ -1,8 +1,11 @@
 mc_intervalms = 5000
-mc_interval = 0
+mc_interval = false
 
 reposition = (e) ->
   $(".multicarousel").each (idx, el) ->
+    clearInterval mc_interval if mc_interval is not false
+    mc_interval = false
+
     mc_itemwidth = 250
 
     mc = $(el)
@@ -31,6 +34,13 @@ reposition = (e) ->
         if itemidx == mc_firstidx or
             mc_firstidx + mc_numitems - 1 > mc_items.length
           console.log "itemidx:", itemidx
+          return
+    mc_interval = setInterval(next_item, mc_intervalms) if mc_interval is false
+    return
+
+next_item = (e) ->
+  "pass"
+  return
 
 window.addEventListener "resize", reposition
 reposition()
