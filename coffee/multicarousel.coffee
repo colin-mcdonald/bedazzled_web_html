@@ -3,8 +3,9 @@ mc_interval = false
 
 reposition = (e) ->
   $(".multicarousel").each (idx, el) ->
-    clearInterval mc_interval if mc_interval is not false
-    mc_interval = false
+    if mc_interval isnt false
+      clearInterval mc_interval
+      mc_interval = false
 
     mc_itemwidth = 250
 
