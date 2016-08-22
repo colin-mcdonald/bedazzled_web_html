@@ -26,14 +26,23 @@ reposition = (e) ->
       mc_numitems = 0
 
     mc_firstidx = mc_items.index(mc_first.get(0))
+    mc_lastidx = mc_firstidx + mc_numitems
 
     mc_firstx = mc_width / 2 - mc_itemwidth * mc_numitems / 2
     mc_first.css("left", "#{mc_firstx}px")
 
-    for itemidx in [mc_firstidx...mc_firstidx + mc_numitems]
+    mc_visidxs = (idx % mc_items.length for idx in [mc_firstidx...mc_lastidx])
+
+    for itemidx in [0...mc_items.length]
       do (itemidx) ->
-        itemidx %= mc_items.length
-        console.log "itemidx:", itemidx
+        visidx = mc_visidxs.indexOf itemidx
+        if visidx >= 0
+          mc_items.eq(itemidx).removeClass("hidden").removeClass("active")
+            .css("left", "#{mc_firstx + mc_itemwidth * visidx}px")
+          mc_items.eq(itemidx).addClass("active") if visidx == 0
+        else
+          mc_items.eq(itemidx).addClass("hidden").removeClass("active")
+
     mc_interval = setInterval(next_item, mc_intervalms) if mc_interval is false
     return
 
