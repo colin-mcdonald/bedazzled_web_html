@@ -24,11 +24,12 @@ reposition = (e) ->
       mc_numitems = 0
 
     mc_itemwidth = (mc_width - 170) / mc_numitems
+    mc_spacing = mc_itemwidth + 8
 
     mc_firstidx = mc_items.index(mc_first.get(0))
     mc_lastidx = mc_firstidx + mc_numitems
 
-    mc_firstx = mc_width / 2 - mc_itemwidth * mc_numitems / 2
+    mc_firstx = mc_width / 2 - mc_spacing * mc_numitems / 2
     mc_first.css("left", "#{mc_firstx}px")
 
     mc_visidxs = (idx % mc_items.length for idx in [mc_firstidx...mc_lastidx])
@@ -36,11 +37,11 @@ reposition = (e) ->
     for itemidx in [0...mc_items.length]
       do (itemidx) ->
         visidx = mc_visidxs.indexOf itemidx
-        mc_items.eq(itemidx).css("width", mc_itemwidth)
+        mc_items.eq(itemidx).css("width", "#{mc_itemwidth}px")
         if visidx >= 0
           mc_items.eq(itemidx).removeClass("hidden")
             .removeClass("first").removeClass("last")
-            .css("left", "#{mc_firstx + mc_itemwidth * visidx}px")
+            .css("left", "#{mc_firstx + mc_spacing * visidx}px")
           mc_items.eq(itemidx).addClass("first") if visidx == 0
           mc_items.eq(itemidx).addClass("last") if visidx == mc_numitems - 1
         else
