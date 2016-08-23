@@ -237,6 +237,7 @@
   }
   &main-shows {
     background-color: @white;
+    overflow: hidden;
   }
   &shows {
     .item {
@@ -307,6 +308,7 @@
   }
   & > &-inner {
     // This will not be visible on mobile phones.
+    overflow: hidden;
     @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) {
       width: @bs-container-sm;
     }
@@ -320,7 +322,6 @@
       height: @shows-carousel-height;
       margin: 10px auto;
       position: relative;
-      overflow: hidden;
       > .item {
         width: 25%;
         height: @shows-carousel-height;
@@ -346,9 +347,6 @@
           right: -1px;
         }
       } // /.item
-    }
-    @media (max-width: (@bs-md - 1)) {
-      overflow: scroll;
     }
   }
 }
