@@ -337,6 +337,12 @@
         &.hidden {
           display: none;
         }
+        &.first::before {
+          display: none;
+        }
+        &.last::after {
+          display: none;
+        }
         &::before {
           .before_after_line();
           .mc_line();

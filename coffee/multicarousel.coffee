@@ -11,7 +11,7 @@ reposition = (e) ->
     mc_inner = mc.children(".multicarousel-inner").first()
     mc_items = mc_inner.children(".item")
     mc_visible = mc_items.not(".hidden")
-    mc_first = mc_visible.filter(".active")
+    mc_first = mc_visible.filter(".first")
 
     mc_width = mc_inner.innerWidth()
     if mc_width == 1170  # Large/wide desktop
@@ -38,9 +38,11 @@ reposition = (e) ->
         visidx = mc_visidxs.indexOf itemidx
         mc_items.eq(itemidx).css("width", mc_itemwidth)
         if visidx >= 0
-          mc_items.eq(itemidx).removeClass("hidden").removeClass("active")
+          mc_items.eq(itemidx).removeClass("hidden")
+            .removeClass("first").removeClass("last")
             .css("left", "#{mc_firstx + mc_itemwidth * visidx}px")
-          mc_items.eq(itemidx).addClass("active") if visidx == 0
+          mc_items.eq(itemidx).addClass("first") if visidx == 0
+          mc_items.eq(itemidx).addClass("last") if visidx == mc_numitems - 1
         else
           mc_items.eq(itemidx).addClass("hidden").removeClass("active")
 
