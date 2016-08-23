@@ -7,8 +7,6 @@ reposition = (e) ->
       clearInterval mc_interval
       mc_interval = false
 
-    mc_itemwidth = 250
-
     mc = $(el)
     mc_inner = mc.children(".multicarousel-inner").first()
     mc_items = mc_inner.children(".item")
@@ -25,6 +23,8 @@ reposition = (e) ->
     else  # Smartphone
       mc_numitems = 0
 
+    mc_itemwidth = (mc_width - 170) / mc_numitems
+
     mc_firstidx = mc_items.index(mc_first.get(0))
     mc_lastidx = mc_firstidx + mc_numitems
 
@@ -36,6 +36,7 @@ reposition = (e) ->
     for itemidx in [0...mc_items.length]
       do (itemidx) ->
         visidx = mc_visidxs.indexOf itemidx
+        mc_items.eq(itemidx).css("width", mc_itemwidth)
         if visidx >= 0
           mc_items.eq(itemidx).removeClass("hidden").removeClass("active")
             .css("left", "#{mc_firstx + mc_itemwidth * visidx}px")
@@ -47,6 +48,7 @@ reposition = (e) ->
     return
 
 next_item = (e) ->
+  console.log "next_item called:", e
   "pass"
   return
 
