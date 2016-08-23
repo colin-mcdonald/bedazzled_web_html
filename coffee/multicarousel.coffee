@@ -1,4 +1,4 @@
-mc_intervalms = 5000
+mc_intervalms = 10000
 mc_interval = false
 
 reposition = (e) ->

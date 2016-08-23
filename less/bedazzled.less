@@ -37,6 +37,11 @@
   height: @carousel-slidebtn-size;
 }
 
+.before_after_line() {
+  content: "";
+  display: block;
+}
+
 // ---------- Bedazzled-specific stuff ----------
 .bedazzled-- {
   &main-top {
@@ -148,13 +153,12 @@
       text-decoration: none;
     }
     &::after {
-      content: "";
-      display: block;
+      .before_after_line();
       background-color: @white;
-      height: 6px;
       margin: 12px auto;
       transition: width 0.2s ease-in-out 0s;
       width: 120px;
+      height: 6px;
       @media (min-width: @bs-sm) and (max-width: (@bs-md - 1)) { // Tablet
         width: 70px;
         height: 4px;
@@ -323,8 +327,25 @@
         position: absolute;
         transition: left 1s ease-in-out 0s;
         top: 0;
+        .mc_line() {
+          background-color: @black;
+          width: 2px;
+          height: 240px;
+          position: absolute;
+          top: 0;
+        }
         &.hidden {
           display: none;
+        }
+        &::before {
+          .before_after_line();
+          .mc_line();
+          left: -1px;
+        }
+        &::after {
+          .before_after_line();
+          .mc_line();
+          right: -1px;
         }
       } // /.item
     }
