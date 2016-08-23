@@ -1,8 +1,7 @@
-mc_intervalms = 10000
-mc_interval = false
-
-reposition = (e) ->
-  $(".multicarousel").each (idx, el) ->
+$(".multicarousel").each (idx, el) ->
+  mc_intervalms = 10000
+  mc_interval = false  # Interval ID, or false if no interval is set
+  reposition = (e) ->
     if mc_interval isnt false
       clearInterval mc_interval
       mc_interval = false
@@ -47,13 +46,16 @@ reposition = (e) ->
         else
           mc_items.eq(itemidx).addClass("hidden").removeClass("active")
 
-    mc_interval = setInterval(next_item, mc_intervalms) if mc_interval is false
+    mc_interval = setInterval(move_next, mc_intervalms) if mc_interval is false
     return
 
-next_item = (e) ->
-  console.log "next_item called:", e
-  "pass"
-  return
+  move_next = (e) ->
+    console.log "move_next called:", e
+    "pass"
 
-window.addEventListener "resize", reposition
-reposition()
+  move_prev = (e) ->
+    console.log "move_prev called:", e
+    "pass"
+
+  window.addEventListener "resize", reposition
+  reposition()
