@@ -4,13 +4,11 @@ $(".multicarousel").each (idx, el) ->
   mc = $(el)
   mc_inner = mc.children(".multicarousel-inner").first()
   mc_items = mc_inner.children(".item")
-  mc_first = mc_items.not(".hidden").filter(".first").first()
 
   reposition = (e) ->
     if mc_interval isnt false
       clearInterval mc_interval
       mc_interval = false
-
 
     mc_width = mc_inner.innerWidth()
     if mc_width == 1170  # Large/wide desktop
@@ -21,6 +19,8 @@ $(".multicarousel").each (idx, el) ->
       mc_numitems = 2
     else  # Smartphone
       mc_numitems = 0
+
+    mc_first = mc_items.not(".hidden").filter(".first").first()
 
     mc_itemwidth = (mc_width - 170) / mc_numitems
     mc_spacing = mc_itemwidth + 8
@@ -53,17 +53,14 @@ $(".multicarousel").each (idx, el) ->
     console.log "move_next called:", e
 
     # Set classes
-    mc_nextfirst = mc_first.removeClass("first")
+    mc_nextfirst = mc_items.not(".hidden").filter(".first").first()
+      .removeClass("first")
     if mc_nextfirst.is(":last-child")
-      mc_nextfirst = mc_items.children().first()
+      mc_nextfirst = mc_items.first()
     else
       mc_nextfirst = mc_nextfirst.next()
-    mc_nextfirst.addClass("first")
-
-    # Reset interval
-    if mc_interval isnt false
-      clearInterval mc_interval
-      mc_interval = setInterval move_next, mc_intervalms
+    console.log mc_nextfirst
+    mc_nextfirst.removeClass("hidden").addClass("first")
 
     reposition()
     return
@@ -72,17 +69,14 @@ $(".multicarousel").each (idx, el) ->
     console.log "move_prev called:", e
 
     # Set classes
-    mc_nextfirst = mc_first.removeClass("first")
+    mc_nextfirst = mc_items.not(".hidden").filter(".first").first()
+      .removeClass("first")
     if mc_nextfirst.is(":first-child")
-      mc_nextfirst = mc_items.children().last()
+      mc_nextfirst = mc_items.last()
     else
       mc_nextfirst = mc_nextfirst.prev()
-    mc_nextfirst.addClass("first")
-
-    # Reset interval
-    if mc_interval isnt false
-      clearInterval mc_interval
-      mc_interval = setInterval move_next, mc_intervalms
+    console.log mc_nextfirst
+    mc_nextfirst.removeClass("hidden").addClass("first")
 
     reposition()
     return
