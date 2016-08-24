@@ -1,16 +1,16 @@
 $(".multicarousel").each (idx, el) ->
   mc_intervalms = 10000
   mc_interval = false  # Interval ID, or false if no interval is set
+  mc = $(el)
+  mc_inner = mc.children(".multicarousel-inner").first()
+  mc_items = mc_inner.children(".item")
+  mc_first = mc_items.not(".hidden").filter(".first").first()
+
   reposition = (e) ->
     if mc_interval isnt false
       clearInterval mc_interval
       mc_interval = false
 
-    mc = $(el)
-    mc_inner = mc.children(".multicarousel-inner").first()
-    mc_items = mc_inner.children(".item")
-    mc_visible = mc_items.not(".hidden")
-    mc_first = mc_visible.filter(".first")
 
     mc_width = mc_inner.innerWidth()
     if mc_width == 1170  # Large/wide desktop
@@ -51,11 +51,43 @@ $(".multicarousel").each (idx, el) ->
 
   move_next = (e) ->
     console.log "move_next called:", e
-    "pass"
+
+    # Set classes
+    mc_nextfirst = mc_first.removeClass("first")
+    if mc_nextfirst.is(":last-child")
+      mc_nextfirst = mc_items.children().first()
+    else
+      mc_nextfirst = mc_nextfirst.next()
+    mc_nextfirst.addClass("first")
+
+    # Reset interval
+    if mc_interval isnt false
+      clearInterval mc_interval
+      mc_interval = setInterval move_next, mc_intervalms
+
+    reposition()
+    return
 
   move_prev = (e) ->
     console.log "move_prev called:", e
-    "pass"
+
+    # Set classes
+    mc_nextfirst = mc_first.removeClass("first")
+    if mc_nextfirst.is(":first-child")
+      mc_nextfirst = mc_items.children().last()
+    else
+      mc_nextfirst = mc_nextfirst.prev()
+    mc_nextfirst.addClass("first")
+
+    # Reset interval
+    if mc_interval isnt false
+      clearInterval mc_interval
+      mc_interval = setInterval move_next, mc_intervalms
+
+    reposition()
+    return
 
   window.addEventListener "resize", reposition
+  mc.on "click", "a[data-slide=prev]", move_prev
+  mc.on "click", "a[data-slide=next]", move_next
   reposition()
