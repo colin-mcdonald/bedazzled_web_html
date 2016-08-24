@@ -50,8 +50,6 @@ $(".multicarousel").each (idx, el) ->
     return
 
   move_next = (e) ->
-    console.log "move_next called:", e
-
     # Set classes
     mc_nextfirst = mc_items.not(".hidden").filter(".first").first()
       .removeClass("first")
@@ -59,15 +57,12 @@ $(".multicarousel").each (idx, el) ->
       mc_nextfirst = mc_items.first()
     else
       mc_nextfirst = mc_nextfirst.next()
-    console.log mc_nextfirst
     mc_nextfirst.removeClass("hidden").addClass("first")
 
     reposition()
     return
 
   move_prev = (e) ->
-    console.log "move_prev called:", e
-
     # Set classes
     mc_nextfirst = mc_items.not(".hidden").filter(".first").first()
       .removeClass("first")
@@ -75,7 +70,6 @@ $(".multicarousel").each (idx, el) ->
       mc_nextfirst = mc_items.last()
     else
       mc_nextfirst = mc_nextfirst.prev()
-    console.log mc_nextfirst
     mc_nextfirst.removeClass("hidden").addClass("first")
 
     reposition()
